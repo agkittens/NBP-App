@@ -14,6 +14,15 @@ html{
     font-family: 'Bahnschrift';
 }
 
+img{
+    position: absolute;
+    display:flex;
+
+    top: 50px;
+    right:50px;
+    height: 8%;
+    width:3%;
+}
 
 text0{
     top: 86px;
@@ -29,6 +38,7 @@ text0{
     font-stretch: normal;
     text-decoration: none;
 }
+
 
 text1{
     top: 100px;
@@ -81,7 +91,6 @@ text3{
     font-stretch: normal;
     text-decoration: none;
 }
-
 
 
 
@@ -155,14 +164,8 @@ input{
 
 }
 
-
-
-.ans1{
-  top: 170px;
-  right: 300px;
-  width: 458px;
-  height: 50px;
-  position: absolute;
+.ans1, .ans2, .container{
+    position: absolute;
 
     background: rgba(217, 217, 217, 0.5);
     border-radius: 30px;
@@ -170,38 +173,59 @@ input{
     text-align:center;
     font-style: normal;
     font-weight: 500;
+    font-size: 16px;
+
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.ans1{
+    top: 150px;
+    right: 300px;
+    width: 458px;
+    height: 50px;
 
 }
 
 .ans2{
-  top: 450px;
-  right: 300px;
-  width: 458px;
-  height: 50px;
-  position: absolute;
-    background: rgba(217, 217, 217, 0.5);
-    border-radius: 30px;
+    top: 430px;
+    right: 300px;
+    width: 458px;
+    height: 50px;
 
-    text-align:center;
+}
+
+.container{
+    top: 680px;
+    right: 300px;
+    width: 458px;
+    height: 185px;
+
 }
 
 .ans3{
-  top: 700px;
-  right: 300px;
-  width: 458px;
-  height: 185px;
-  position: absolute;
+    width:400px;
+    height: 100%;
+    padding-top:20px;
+    padding-left:25px;
 
-    background: rgba(217, 217, 217, 0.5);
-    border-radius: 30px;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content:center;
+}
 
-    text-align:center;
+
+.container::-webkit-scrollbar{
+    width: 0;
+    height: 0;
 }
 
 ::placeholder{
     font-weight: 500;
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.25);
 }
 
 .input.average:hover{

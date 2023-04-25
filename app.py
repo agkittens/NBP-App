@@ -4,7 +4,7 @@ from data_managment import ExchangeRate
 
 MESSAGE = ""
 AVERAGE, MIN_MAX, DIFF = MESSAGE, MESSAGE, MESSAGE
-
+RATE = ExchangeRate(data = None)
 
 app = Flask(__name__)
 
@@ -14,31 +14,28 @@ def main():
     global AVERAGE, MIN_MAX, DIFF
 
     if request.method == "POST":
-
         code, date, quotations = request.form.get("code"), request.form.get("date"), request.form.get("quotations")
-        rate = ExchangeRate(data = None)
-
 
 
         if request.form.get("submit_button") == "Average":
-            AVERAGE = rate.average_rate_init(code, date)
+            AVERAGE = RATE.average_rate_init(code, date)
 
 
 
         elif request.form.get("submit_button") == "Min and max":
-            if rate.last_quotations_init(code, quotations):
-                MIN_MAX = rate.get_min_max_value()
+            if RATE.last_quotations_init(code, quotations, action = "min_max"):
+                MIN_MAX = RATE.get_min_max_value()
 
-            else: MIN_MAX = rate.incorrect_info
+            else: MIN_MAX = RATE.incorrect_info
 
 
 
         elif request.form.get("submit_button") == "Difference":
-            if rate.last_quotations_init(code, quotations):
-                DIFF = rate.get_major_diff()
+            if RATE.last_quotations_init(code, quotations, action = "diff"):
+                DIFF = RATE.get_major_diff()
 
             else:
-                DIFF = rate.incorrect_info
+                DIFF = RATE.incorrect_info
 
 
 

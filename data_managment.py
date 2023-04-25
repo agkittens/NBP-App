@@ -28,11 +28,17 @@ class ExchangeRate:
 
 
 
-    def last_quotations_init(self, code, quotations):
+    def last_quotations_init(self, code, quotations, action):
         code, quotations, state = conditions.quotations_conditions(code, quotations)
 
-        if state == True:
+        if state == True and action == "min_max":
             self.data = url_requests.average_rates_url(code, int(quotations))
+
+            if self.data is not False: return True
+            else: return False
+
+        elif state == True and action == "diff":
+            self.data = url_requests.ask_bid_url(code, int(quotations))
 
             if self.data is not False: return True
             else: return False

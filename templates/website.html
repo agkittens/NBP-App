@@ -7,12 +7,14 @@
     <title>NBP App</title>
 </head>
 <body>
+    <a href="https://github.com/agkittens"><img src = "static\github.png" ></a>
+
     <text0>NBP App</text0>
     <form method="POST" action = "/">
 
-        <input class = "code" name ="code" placeholder="Code">
-        <input class = "date" name="date" placeholder="YY-MM-DD">
-        <input class = "quotations" name="quotations" placeholder="Quotations">
+        <input class = "code" name ="code" placeholder="CURRENCY">
+        <input class = "date" name="date" placeholder="YYYY-MM-DD">
+        <input class = "quotations" name="quotations" placeholder="QOUTATIONS">
 
         <input class = "average" value = "Average" name ="submit_button" type="submit" onclick="play()">
         <input class = "min_max" value = "Min and max" name ="submit_button" type="submit" onclick="play()">
@@ -21,13 +23,16 @@
     </form>
 
     <text1>Average exchange rate of exact date:</text1>
-    <label class ="ans1"> {{rate_1}} </label>
+    <label class ="ans1"> <div> {{rate_1}} </div></label>
+<!--    <label class ="ans1"> <div class = "ans1"> {{rate_1}} </div></label>-->
 
     <text2>Min and max average exchange rate of the last N quotations:</text2>
     <label class ="ans2"> {{rate_2}} </label>
 
     <text3>Difference between ask and buy rate of the last N quotations:</text3>
-    <label class ="ans3"> {{rate_3}} </label>
+    <div class ="container" style="overflow-y: scroll">
+        <div class = "ans3"> {{rate_3}} </div>
+    </div>
 
 </body>
 </html>

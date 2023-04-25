@@ -12,14 +12,12 @@ def check_code(code):
         STATE = False
         return code
 
-    else:
-        return code
+    else: return code
 
 
 def check_date(date):
     global STATE
     STATE = True
-
     format = ("%Y-%m-%d")
 
     try:
