@@ -1,5 +1,11 @@
 from data_managment import ExchangeRate
 
+#Testing class - each function tests possible choices
+#There are 3 functions for correct values - testing if the output is correct (based on value from url)
+
+#There are 3 functions for wrong values - each function has 3 combinations for incorrect output
+# (2 with 1 wrong value and 1 with 2 wrong values)
+
 
 class TestApp:
     rate = ExchangeRate(data = None)

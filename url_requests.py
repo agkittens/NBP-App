@@ -1,6 +1,7 @@
 import urllib.request, json
 from constants import *
 
+#Checks existance based on url - if url does not exists returns False
 def check_existance(url:str) -> list or None:
 
     try:
@@ -12,6 +13,7 @@ def check_existance(url:str) -> list or None:
     except: return False
 
 
+#Url combinations
 def average_rate_url(code:str, date:str) -> str:
     url = BASE_URL + f"a/{code}/{date}"
     return check_existance(url)

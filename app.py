@@ -5,9 +5,10 @@ from data_managment import ExchangeRate
 MESSAGE = ""
 RATE = ExchangeRate(data = None)
 
+#Creating the application
 app = Flask(__name__)
 
-
+#Running the server
 @app.route("/", methods = ["GET", "POST"])
 def main():
     AVERAGE, MIN_MAX, DIFF, CODE, DATE, QUOTATIONS = MESSAGE, MESSAGE, MESSAGE, MESSAGE, MESSAGE, MESSAGE
@@ -39,6 +40,6 @@ def main():
 
 
     return render_template('website.html', rate_1 = AVERAGE, rate_2 = MIN_MAX, rate_3 = DIFF,
-                           code = CODE, date = DATE, quotations = QUOTATIONS)
+                           code = CODE.upper(), date = DATE, quotations = QUOTATIONS)
 
 
