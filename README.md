@@ -22,7 +22,7 @@ CODES = ['AUD','THB','BRL','BGN','CAD','CLP','CZK','DDK','EUR','HUF','HKD','UAH'
 Min and max value shoud contain a currency code and number(N <= 255) of quotations. It returns min and max value of average rate from last N quotations.
 Major difference value shoud contain a currency code and number(N <= 255) of quotations. It returns difference of the buy rate and ask rate from last N quotations.
 
-![output](https://github.com/agkittens/NBP-App/tree/main/assets/example.png?raw=true)
+![output](https://github.com/agkittens/NBP-App/tree/main/assets/example.PNG?=250x250)
 
 ## Docker and Installation
 
