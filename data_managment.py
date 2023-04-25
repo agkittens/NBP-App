@@ -7,7 +7,6 @@ class ExchangeRate:
 
         try:
             self.data = data
-
         except:
             self.data = None
 
@@ -33,15 +32,11 @@ class ExchangeRate:
 
         if state == True and action == "min_max":
             self.data = url_requests.average_rates_url(code, int(quotations))
-
-            if self.data is not False: return True
-            else: return False
+            return self.data is not False
 
         elif state == True and action == "diff":
             self.data = url_requests.ask_bid_url(code, int(quotations))
-
-            if self.data is not False: return True
-            else: return False
+            return self.data is not False
 
         else: return False
 
@@ -52,10 +47,13 @@ class ExchangeRate:
         return val
 
 
-    def get_major_diff(self) -> list:
+    def get_major_diff(self) -> str:
         diff = []
         for x in self.data["rates"]:
             diff.append(format(x["ask"] - x["bid"], ".4"))
+
+        diff = str(diff)[1:-1]
+        diff = diff.replace("\'", "")
 
         return diff
 

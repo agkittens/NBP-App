@@ -33,11 +33,19 @@ def check_quotations(num):
     global  STATE
     STATE = True
 
-    if not num in range(1,256,1):
+    try:
+        num = int(num)
+        if not num in range(1,256,1):
+            STATE = False
+            return num
+
+        else: return num
+        
+    except:
         STATE = False
         return num
 
-    else: return num
+
 
 
 def average_conditions(code, date):

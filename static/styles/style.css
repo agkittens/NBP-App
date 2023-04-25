@@ -92,7 +92,21 @@ text3{
     text-decoration: none;
 }
 
-
+text4{
+  top: 720px;
+  left: 110px;
+    color: rgba(0, 0, 0, 1);
+    width: 458px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    font-style: Regular;
+    text-align: left;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
 
 input{
     width: 226px;
@@ -164,6 +178,7 @@ input{
 
 }
 
+
 .ans1, .ans2, .container{
     position: absolute;
 
@@ -172,7 +187,7 @@ input{
 
     text-align:center;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
 
     display: flex;
@@ -180,6 +195,7 @@ input{
     flex-direction: column;
     justify-content:center;
 }
+
 
 .ans1{
     top: 150px;
@@ -189,6 +205,7 @@ input{
 
 }
 
+
 .ans2{
     top: 430px;
     right: 300px;
@@ -197,6 +214,7 @@ input{
 
 }
 
+
 .container{
     top: 680px;
     right: 300px;
@@ -204,6 +222,7 @@ input{
     height: 185px;
 
 }
+
 
 .ans3{
     width:400px;
@@ -214,6 +233,57 @@ input{
     vertical-align: middle;
     flex-direction: column;
     justify-content:center;
+}
+
+
+.current_code, .current_date, .current_quotations{
+    width: 226px;
+    height: 50px;
+
+    text-align:center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content:center;
+
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 30px;
+    border-style: none;
+    }
+
+
+.current_code{
+  top: 770px;
+  left: 100px;
+
+  position: absolute;
+
+  font-size: 18px;
+}
+
+
+.current_date{
+  top: 770px;
+  left: 370px;
+
+  position: absolute;
+
+  font-size: 18px;
+}
+
+
+.current_quotations{
+  top: 770px;
+  left: 640px;
+
+  position: absolute;
+
+  font-size: 18px;
 }
 
 

@@ -3,7 +3,6 @@ from data_managment import ExchangeRate
 
 
 MESSAGE = ""
-AVERAGE, MIN_MAX, DIFF = MESSAGE, MESSAGE, MESSAGE
 RATE = ExchangeRate(data = None)
 
 app = Flask(__name__)
@@ -11,19 +10,19 @@ app = Flask(__name__)
 
 @app.route("/", methods = ["GET", "POST"])
 def main():
-    global AVERAGE, MIN_MAX, DIFF
+    AVERAGE, MIN_MAX, DIFF, CODE, DATE, QUOTATIONS = MESSAGE, MESSAGE, MESSAGE, MESSAGE, MESSAGE, MESSAGE
 
     if request.method == "POST":
-        code, date, quotations = request.form.get("code"), request.form.get("date"), request.form.get("quotations")
+        CODE, DATE, QUOTATIONS = request.form.get("code"), request.form.get("date"), request.form.get("quotations")
 
 
         if request.form.get("submit_button") == "Average":
-            AVERAGE = RATE.average_rate_init(code, date)
+            AVERAGE = RATE.average_rate_init(CODE, DATE)
 
 
 
         elif request.form.get("submit_button") == "Min and max":
-            if RATE.last_quotations_init(code, quotations, action = "min_max"):
+            if RATE.last_quotations_init(CODE, QUOTATIONS, action = "min_max"):
                 MIN_MAX = RATE.get_min_max_value()
 
             else: MIN_MAX = RATE.incorrect_info
@@ -31,7 +30,7 @@ def main():
 
 
         elif request.form.get("submit_button") == "Difference":
-            if RATE.last_quotations_init(code, quotations, action = "diff"):
+            if RATE.last_quotations_init(CODE, QUOTATIONS, action = "diff"):
                 DIFF = RATE.get_major_diff()
 
             else:
@@ -39,6 +38,7 @@ def main():
 
 
 
-    return render_template('website.html', rate_1 = AVERAGE, rate_2 = MIN_MAX, rate_3 = DIFF )
+    return render_template('website.html', rate_1 = AVERAGE, rate_2 = MIN_MAX, rate_3 = DIFF,
+                           code = CODE, date = DATE, quotations = QUOTATIONS)
 
 
