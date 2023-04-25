@@ -40,7 +40,7 @@ def check_quotations(num):
             return num
 
         else: return num
-        
+
     except:
         STATE = False
         return num

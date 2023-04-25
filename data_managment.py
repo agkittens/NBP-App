@@ -12,14 +12,14 @@ class ExchangeRate:
 
 
 
-    def average_rate_init(self, code, date):
+    def get_average_rate(self, code, date):
         code, date, state = conditions.average_conditions(code, date)
 
         if state == True:
             self.data = url_requests.average_rate_url(code, date)
 
             if self.data is not False:
-                average_rate = self.get_average_rate()
+                average_rate = self.calc_average_rate()
                 return average_rate
 
             else: return self.incorrect_info
@@ -42,7 +42,7 @@ class ExchangeRate:
 
 
 
-    def get_average_rate(self) -> int:
+    def calc_average_rate(self) -> int:
         val = self.data["rates"][0]["mid"]
         return val
 

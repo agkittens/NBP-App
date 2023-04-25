@@ -17,7 +17,7 @@ def main():
 
 
         if request.form.get("submit_button") == "Average":
-            AVERAGE = RATE.average_rate_init(CODE, DATE)
+            AVERAGE = RATE.get_average_rate(CODE, DATE)
 
 
 
