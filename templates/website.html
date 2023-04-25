@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\styles\style.css">
+    <title>NBP App</title>
+</head>
+<body>
+    <text0>NBP App</text0>
+    <form method="POST" action = "/">
+
+        <input class = "code" name ="code" placeholder="Code">
+        <input class = "date" name="date" placeholder="YY-MM-DD">
+        <input class = "quotations" name="quotations" placeholder="Quotations">
+
+        <input class = "average" value = "Average" name ="submit_button" type="submit" onclick="play()">
+        <input class = "min_max" value = "Min and max" name ="submit_button" type="submit" onclick="play()">
+        <input class = "diff" value = "Difference" name ="submit_button" type="submit" onclick="play()">
+
+    </form>
+
+    <text1>Average exchange rate of exact date:</text1>
+    <label class ="ans1"> {{rate_1}} </label>
+
+    <text2>Min and max average exchange rate of the last N quotations:</text2>
+    <label class ="ans2"> {{rate_2}} </label>
+
+    <text3>Difference between ask and buy rate of the last N quotations:</text3>
+    <label class ="ans3"> {{rate_3}} </label>
+
+</body>
+</html>
