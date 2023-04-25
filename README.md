@@ -18,12 +18,11 @@ List of currency codes:
 ```
 CODES = ['AUD','THB','BRL','BGN','CAD','CLP','CZK','DDK','EUR','HUF','HKD','UAH','ISK','INR','MYR','MXN','ILS','NZD','NOK','PHP','GBP','ZAR','RON','IDR','SGD','SEK','CHF','TRY','USD','KRW','JPY','CNY','XDR']
 ```
-\
+![output](https://github.com/agkittens/NBP-App/blob/main/assets/example.png?=250x250)
+
 ### Conditions
 Min and max value shoud contain a currency code and number(N <= 255) of quotations. It returns min and max value of average rate from last N quotations.\
 Major difference value shoud contain a currency code and number(N <= 255) of quotations. It returns difference of the buy rate and ask rate from last N quotations.\
-\
-![output](https://github.com/agkittens/NBP-App/blob/main/assets/example.png?=250x250)
 \
 \
 If there occurs any incorrect value the output will be "Incorrect value" - the value must follow mentioned conditions.
