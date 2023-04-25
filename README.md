@@ -25,6 +25,16 @@ Major difference value shoud contain a currency code and number(N <= 255) of quo
 ![output](https://github.com/agkittens/NBP-App/blob/main/assets/example.png?=250x250)
 
 ## Docker and Installation
+To build a Docker Image run this command:
+```
+$ git clone https://github.com/agkittens/NBP-App.git
+$ docker image build -t nbp-app.
+```
+
+Then run the server with:
+```
+$ docker run -i -p 5000:5000 -d nbp_app
+```
 
 
 
