@@ -62,13 +62,13 @@ class TestApp:
 
         wrong_value = False
 
-        min_max_wrong1 = self.rate.last_quotations_init(correct_code, wrong_quotat, action = "min_max")
-        min_max_wrong2 = self.rate.last_quotations_init(wrong_code, correct_quotat, action = "min_max")
-        min_max_wrong3 = self.rate.last_quotations_init(wrong_code, wrong_quotat, action = "min_max")
+        input_wrong1 = self.rate.last_quotations_init(correct_code, wrong_quotat, action = "min_max")
+        input_wrong2 = self.rate.last_quotations_init(wrong_code, correct_quotat, action = "min_max")
+        input_wrong3 = self.rate.last_quotations_init(wrong_code, wrong_quotat, action = "min_max")
 
-        assert min_max_wrong1 == wrong_value
-        assert min_max_wrong2 == wrong_value
-        assert min_max_wrong3 == wrong_value
+        assert input_wrong1 == wrong_value
+        assert input_wrong2 == wrong_value
+        assert input_wrong3 == wrong_value
 
 
 if __name__=='__main__':
