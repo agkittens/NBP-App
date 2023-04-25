@@ -1,7 +1,5 @@
 import urllib.request, json
-
-BASE_URL = "http://api.nbp.pl/api/exchangerates/rates/"
-
+from constants import *
 
 def check_existance(url:str) -> list or None:
 
@@ -11,14 +9,12 @@ def check_existance(url:str) -> list or None:
         data = json.loads(response.read().decode())
         return data
 
-    except:
-        return None
+    except: return False
 
 
 def average_rate_url(code:str, date:str) -> str:
     url = BASE_URL + f"a/{code}/{date}"
     return check_existance(url)
-
 
 def average_rates_url(code:str, quatations_num:int) -> str:
     url = BASE_URL + f"a/{code}/last/{quatations_num}"

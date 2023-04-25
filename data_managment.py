@@ -1,14 +1,49 @@
-import pandas as pd
-
-
+import conditions, url_requests
 
 class ExchangeRate:
 
     def __init__(self, data):
+        self.incorrect_info = "Incorrect data"
+
         try:
-            self.data = pd.json_normalize(data)
+            self.data = data
+
         except:
-            self.data = "Parameter was not provided"
+            self.data = None
+
+
+
+    def average_rate_init(self, code, date):
+        code, date, state = conditions.average_conditions(code, date)
+
+        if state == True:
+            self.data = url_requests.average_rate_url(code, date)
+
+            if self.data is not False:
+                average_rate = self.get_average_rate()
+                return average_rate
+
+            else: return self.incorrect_info
+        else: return self.incorrect_info
+
+
+
+    def last_quotations_init(self, code, quotations):
+        code, quotations, state = conditions.quotations_conditions(code, quotations)
+
+        if state == True:
+            self.data = url_requests.average_rates_url(code, int(quotations))
+
+            if self.data is not False: return True
+            else: return False
+
+        else: return False
+
+
+
+    def get_average_rate(self) -> int:
+        val = self.data["rates"][0]["mid"]
+        return val
 
 
     def get_major_diff(self) -> list:
@@ -17,12 +52,6 @@ class ExchangeRate:
             diff.append(format(x["ask"] - x["bid"], ".4"))
 
         return diff
-
-
-
-    def get_average_rate(self) -> int:
-        val = self.data["rates"][0]["mid"]
-        return val
 
 
 
