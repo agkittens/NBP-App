@@ -4,6 +4,7 @@
 * [General Info](#general-info)
 * [Examples and Usage](#examples-and-usage)
 * [Docker and Installation](#docker-and-installation)
+* [Testing](#testing)
 
 
 ## General Info
@@ -57,5 +58,9 @@ Then run app with this command:
 $ python3 app.py
 ```
 
-
+## Testing
+To run tests: if server is online and if functions are working correctly, run this command:
+```
+$ python3 unit_tests.py
+```
 
