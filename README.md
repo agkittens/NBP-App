@@ -44,7 +44,7 @@ Then run the server with:
 $ docker run -i -p 5000:5000 -d nbp_app
 ```
 \
-If you want to run it without a server follow those steps:
+If you want to run it without a server follow those steps:\
 The required packages for this project are listed in the requirements.txt file. To install them, simply run the following command:
 ```
 $ pip install -r requirements.txt
