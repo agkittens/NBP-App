@@ -44,7 +44,8 @@ Then run the server with:
 $ docker run -i -p 5000:5000 -d nbp-app
 ```
 \
-Server run on : http://127.0.0.1:5000
+Server runs on : http://127.0.0.1:5000
+\
 \
 If you want to run it without a server follow those steps:\
 The required packages for this project are listed in the requirements.txt file. To install them, simply run the following command:
