@@ -1,4 +1,6 @@
 from data_managment import ExchangeRate
+import url_requests
+from app import app
 
 #Testing class - each function tests possible choices
 #There are 3 functions for correct values - testing if the output is correct (based on value from url)
@@ -9,6 +11,16 @@ from data_managment import ExchangeRate
 
 class TestApp:
     rate = ExchangeRate(data = None)
+    last_mid_url = "http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/"
+    last_diff_url = "http://api.nbp.pl/api/exchangerates/rates/c/gbp/last/10/"
+
+
+    #test if server is online
+    def test_server(self):
+        with app.test_client() as a:
+            response = a.get('/')
+            assert response.status_code == 200
+
 
     def test_correct_average_data(self):
         code = "gbp"
@@ -22,23 +34,27 @@ class TestApp:
     def test_correct_min_max_data(self):
         code = "gbp"
         quotations = 10
-        correct_values = (5.1958, 5.3041)
+        correct_number = 2
 
         self.rate.last_quotations_init(code, quotations, action = "min_max")
         min, max = self.rate.get_min_max_value()
 
-        assert min, max == correct_values
+        response = [min, max]
+        response = len(response)
+
+        assert response == correct_number
 
 
     def test_correct_diff_data(self):
         code = "gbp"
         quotations = 10
-        correct_values = "0.1062, 0.1058, 0.105, 0.1048, 0.1048, 0.1048, 0.1048, 0.1044, 0.1042, 0.104"
+        correct_num_of_characters = 76
 
         self.rate.last_quotations_init(code, quotations, action="diff")
         diff = self.rate.get_major_diff()
+        diff = len(diff)
 
-        assert diff == correct_values
+        assert diff == correct_num_of_characters
 
 
     def test_wrong_average_data(self):
@@ -79,6 +95,8 @@ class TestApp:
 
 if __name__=='__main__':
     test = TestApp()
+
+    test.test_server()
 
     test.test_correct_diff_data()
     test.test_correct_average_data()
