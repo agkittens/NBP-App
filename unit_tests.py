@@ -1,5 +1,4 @@
 from data_managment import ExchangeRate
-import url_requests
 from app import app
 
 #Testing class - each function tests possible choices
