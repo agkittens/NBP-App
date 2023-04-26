@@ -31,7 +31,12 @@ If there occurs any incorrect value the output will be "Incorrect value" - the v
 To build a Docker Image run this command in the therminal:
 ```
 $ git clone https://github.com/agkittens/NBP-App.git
-$ docker image build -t nbp-app.
+$ docker image build -t nbp-app .
+```
+or directly from folder with downloaded zip
+```
+$ cd [project path]
+$ docker image build -t nbp-app .
 ```
 \
 Then run the server with:
