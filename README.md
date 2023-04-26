@@ -61,6 +61,7 @@ $ python3 app.py
 ## Testing
 To run tests: if server is online and if functions are working correctly, run this command:
 ```
+$ cd "tests"
 $ python3 unit_tests.py
 ```
 
